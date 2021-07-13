@@ -99,7 +99,7 @@ Logger& operator()(logLevel l)
 }
 
 template <typename T>
-Logger& operator << ( T message)
+Logger& operator << (T message)
 {
   this->log(message); 
   return *this;
