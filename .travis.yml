@@ -3,5 +3,5 @@ language: cpp
 compiler: gcc
   
 script:
-- g++ -pthread log.cc -o log
+- g++ -pthread log.cpp -o log
 - ./log
