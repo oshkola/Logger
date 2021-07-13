@@ -1,4 +1,4 @@
-#include "log.h"
+#include "log.hpp"
 
 std::string Logger::print_logLevel(logLevel l)
 {
