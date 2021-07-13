@@ -68,7 +68,7 @@ void log(T message)
 
   std::string _message;
   _message.append(getTimestamp() + "; " + print_logLevel(ll) 
-		                           + "; ");
+		                 + "; ");
   if (_addPrefix.load())
     _message.append(_prefix);
 		
