@@ -81,17 +81,15 @@ void log(T message)
   if (_writeToFile.load())
   {
     std::ofstream logFile(_filePath, std::ios_base::app | std::ios_base::out);
-	logFile << _message << message << "\n";
-	logFile.close();
+    logFile << _message << message << "\n";
+    logFile.close();
   }
   else
   {
-	std::cout << _message << message;
-	std::cout << std::flush;
+    std::cout << _message << message;
+    std::cout << std::flush;
   }
-
 	_mtx.unlock();
-
 }
 
 Logger& operator()(logLevel l)
@@ -106,7 +104,6 @@ Logger& operator << ( T message)
   this->log(message); 
   return *this;
 }
-
 };
 
 Logger& getLogger()
