@@ -89,7 +89,7 @@ void log(T message)
     std::cout << _message << message;
     std::cout << std::flush;
   }
-	_mtx.unlock();
+  _mtx.unlock();
 }
 
 Logger& operator()(logLevel l)
