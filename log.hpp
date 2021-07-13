@@ -32,15 +32,16 @@ class Logger
 public:
   Logger(const Logger&) = delete;
   Logger& operator=(const Logger&) = delete;
+		
+  std::string getTimestamp();
+  std::string getThreadId();	
+  std::string print_logLevel(logLevel l);
 	
 static Logger& getInstance()
 {
   static Logger _logger;
   return _logger;
 }
-
-std::string print_logLevel(logLevel l);
-
 void writeToConsole()
 {
   _writeToFile = false;
@@ -48,11 +49,7 @@ void writeToConsole()
 void resetPrefix()
 {
   _addPrefix = false;
-}
-
-std::string getTimestamp();
-std::string getThreadId();
-  
+} 
 void setFilePath(std::string& filePath)
 {
   _filePath = filePath;
@@ -63,7 +60,6 @@ void setPrefix(std::string& prefix)
   _prefix = prefix;
   _addPrefix = true;
 }
-
 template <typename T>
 void log(T message)
 {
